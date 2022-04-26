@@ -51,4 +51,12 @@
     </ItemGroup>
   </Target>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\Maxim\source\repos\ChoKawo\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\Maxim\source\repos\ChoKawo\.editorconfig" />
+  </ItemGroup>
+
 </Project>

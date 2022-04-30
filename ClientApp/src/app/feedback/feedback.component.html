@@ -1,28 +1,29 @@
 <mat-card class="feedback-card">
 
     <mat-card-header>
-        Чо? каво?
+        <mat-icon mat-card-avatar>loyalty</mat-icon>
+        Чё, кого?
     </mat-card-header>
 
     <mat-card-content>
-        <form class="feedback-form">
+        <form class="feedback-form" [formGroup]="form">
             <mat-form-field class="w-100" appearance="fill">
                 <mat-label>Имя</mat-label>
-                <input matInput type="text">
+                <input formControlName="name" matInput type="text">
             </mat-form-field>
             <mat-form-field class="w-100" appearance="fill">
                 <mat-label>Почта</mat-label>
-                <input matInput type="email">
+                <input formControlName="email" matInput placeholder="name@example.com" type="email">
             </mat-form-field>
             <mat-form-field class="w-100" appearance="fill">
                 <mat-label>Текст письма</mat-label>
-                <textarea matInput></textarea>
+                <textarea matInput formControlName="text" rows="3"></textarea>
             </mat-form-field>
         </form>
     </mat-card-content>
 
     <mat-card-actions>
-        <button mat-flat-button color="primary">
+        <button mat-flat-button color="primary" [disabled]="loading || form.invalid" (click)="submit()">
             Отправить
         </button>
     </mat-card-actions>

@@ -33,7 +33,7 @@ export class FeedbackComponent implements OnInit {
   submit(): void {
     this.loading = true;
 
-    this.http.post(this.baseUrl + 'sendmessage', this.form.value).pipe(
+    this.http.post(this.baseUrl + 'mail', this.form.value).pipe(
       catchError((err) => {
         this.snackbar.open('Произошла ошибка: ' + err?.message, 'Закрыть');
         this.loading = false;
@@ -42,6 +42,7 @@ export class FeedbackComponent implements OnInit {
     ).subscribe({
       next: () => {
         this.snackbar.open('Сообщение отправлено', 'Закрыть', {});
+        this.form.reset();
         this.loading = false;
       }
     })

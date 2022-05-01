@@ -3,9 +3,8 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --verbose",
     "build": "ng build --configuration production",
-    "build:ssr": "ng run ChoKawo:server:dev",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
